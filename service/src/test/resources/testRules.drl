@@ -1,0 +1,9 @@
+package com.prchny.test.base.ruleEngine
+
+rule "Is Fraud"
+when
+    $sdf : SDCashFraud( sdCashValue > 500 )
+then
+    $sdf.setFraud( true );
+    $sdf.setMessage( "Fraud" );
+end
